@@ -1,0 +1,9 @@
+.todo-app:nth-child(even){
+  text-align: left;
+  background-color: whitesmoke;
+}
+
+.todo-app:nth-child(odd){
+  text-align: left;
+  background-color: lightblue;
+}
