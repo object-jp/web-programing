@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../style/TodoItem.css'
 
 const TodoItem = ({ todo, onDelete }) => {
   const [isChecked, setChecked] = useState(todo.completed);
@@ -14,7 +15,7 @@ const TodoItem = ({ todo, onDelete }) => {
   };
 
   return (
-    <div key={todo.id}>
+    <div className='todo-app'>
       <input
         type="checkbox"
         checked={isChecked}
