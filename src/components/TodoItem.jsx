@@ -1,15 +1,20 @@
-// components/TodoItem.jsx
 import React, { useState } from 'react';
 
-const TodoItem = ({ todo }) => {
+const TodoItem = ({ todo, onDelete }) => {
   const [isChecked, setChecked] = useState(todo.completed);
 
   const handleCheckboxChange = () => {
     setChecked(!isChecked);
   };
 
+  const handleDelete = () => {
+    if(isChecked){
+      onDelete(todo.id);
+    }
+  };
+
   return (
-    <div>
+    <div key={todo.id}>
       <input
         type="checkbox"
         checked={isChecked}
@@ -18,6 +23,7 @@ const TodoItem = ({ todo }) => {
       <span style={{ textDecoration: isChecked ? 'line-through' : 'none' }}>
         {todo.text}
       </span>
+      <button onClick={handleDelete}>Delete</button>
     </div>
   );
 };
